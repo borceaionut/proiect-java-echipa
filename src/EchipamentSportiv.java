@@ -7,7 +7,7 @@ public class EchipamentSportiv implements EquipmentInstructions {
     private double weightKg;
     private int minimumUserAge;
 
-    // 1. Constructor fara argumente
+    // 1. No-argument constructor
     public EchipamentSportiv() {
         this.name = "Unknown Equipment";
         this.brand = "Generic";
@@ -16,7 +16,7 @@ public class EchipamentSportiv implements EquipmentInstructions {
         this.minimumUserAge = 0;
     }
 
-    // 2. Constructor cu toate argumentele
+    // 2. Parameterized constructor
     public EchipamentSportiv(String name, String brand, BigDecimal price, double weightKg, int minimumUserAge) {
         this.name = name;
         this.brand = brand;
@@ -25,7 +25,7 @@ public class EchipamentSportiv implements EquipmentInstructions {
         this.minimumUserAge = minimumUserAge;
     }
 
-    // 3. Constructor de copiere
+    // 3. Copy constructor
     public EchipamentSportiv(EchipamentSportiv other) {
         this.name = other.name;
         this.brand = other.brand;
@@ -34,7 +34,7 @@ public class EchipamentSportiv implements EquipmentInstructions {
         this.minimumUserAge = other.minimumUserAge;
     }
 
-    // Metodele din interfata EquipmentInstructions
+    // Methods from EquipmentInstructions interface
     @Override
     public String getUsageInstructions() {
         return "Use the sports equipment according to the manufacturer's safety guidelines and wear appropriate protective gear.";
@@ -45,7 +45,7 @@ public class EchipamentSportiv implements EquipmentInstructions {
         return "Clean and dry the equipment after each use. Store in a cool, dry place away from direct sunlight.";
     }
 
-    // Getters si Setters
+    // Getters and Setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
