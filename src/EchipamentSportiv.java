@@ -1,52 +1,68 @@
-public abstract class EchipamentSportiv {
-    private String denumire;
-    private String marca;
-    private double pret;
-    private int stoc;
+import java.math.BigDecimal;
+
+public class EchipamentSportiv implements EquipmentInstructions {
+    private String name;
+    private String brand;
+    private BigDecimal price;
+    private double weightKg;
+    private int minimumUserAge;
 
     // 1. Constructor fara argumente
     public EchipamentSportiv() {
-        this.denumire = "Necunoscut";
-        this.marca = "Fara marca";
-        this.pret = 0.0;
-        this.stoc = 0;
+        this.name = "Unknown Equipment";
+        this.brand = "Generic";
+        this.price = BigDecimal.ZERO;
+        this.weightKg = 0.0;
+        this.minimumUserAge = 0;
     }
 
     // 2. Constructor cu toate argumentele
-    public EchipamentSportiv(String denumire, String marca, double pret, int stoc) {
-        this.denumire = denumire;
-        this.marca = marca;
-        this.pret = pret;
-        this.stoc = stoc;
+    public EchipamentSportiv(String name, String brand, BigDecimal price, double weightKg, int minimumUserAge) {
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+        this.weightKg = weightKg;
+        this.minimumUserAge = minimumUserAge;
     }
 
     // 3. Constructor de copiere
-    public EchipamentSportiv(EchipamentSportiv altul) {
-        this.denumire = altul.denumire;
-        this.marca = altul.marca;
-        this.pret = altul.pret;
-        this.stoc = altul.stoc;
+    public EchipamentSportiv(EchipamentSportiv other) {
+        this.name = other.name;
+        this.brand = other.brand;
+        this.price = other.price;
+        this.weightKg = other.weightKg;
+        this.minimumUserAge = other.minimumUserAge;
     }
 
-    // Metode abstracte cerute la punctul 1 din PDF
-    public abstract void afiseazaModUtilizare();
-    public abstract double calculeazaPretRedus(double procentReducere);
+    // Metodele din interfata EquipmentInstructions
+    @Override
+    public String getUsageInstructions() {
+        return "Use the sports equipment according to the manufacturer's safety guidelines and wear appropriate protective gear.";
+    }
+
+    @Override
+    public String getMaintenanceInstructions() {
+        return "Clean and dry the equipment after each use. Store in a cool, dry place away from direct sunlight.";
+    }
 
     // Getters si Setters
-    public String getDenumire() { return denumire; }
-    public void setDenumire(String denumire) { this.denumire = denumire; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getMarca() { return marca; }
-    public void setMarca(String marca) { this.marca = marca; }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
 
-    public double getPret() { return pret; }
-    public void setPret(double pret) { this.pret = pret; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
-    public int getStoc() { return stoc; }
-    public void setStoc(int stoc) { this.stoc = stoc; }
+    public double getWeightKg() { return weightKg; }
+    public void setWeightKg(double weightKg) { this.weightKg = weightKg; }
+
+    public int getMinimumUserAge() { return minimumUserAge; }
+    public void setMinimumUserAge(int minimumUserAge) { this.minimumUserAge = minimumUserAge; }
 
     @Override
     public String toString() {
-        return "Denumire: " + denumire + ", Marca: " + marca + ", Pret: " + pret + " RON, Stoc: " + stoc;
+        return "Name: " + name + ", Brand: " + brand + ", Price: " + price + " RON, Weight: " + weightKg + " kg, Min Age: " + minimumUserAge;
     }
 }
