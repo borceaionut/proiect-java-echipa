@@ -8,23 +8,23 @@ Proiect realizat în cadrul facultății pentru disciplina **Programare Orientat
 
 Toate clasele specifice de mai jos moștenesc atributele și metodele comune din clasa părinte (Superclasa) **`EchipamentSportiv`**.
 
-* **[Denis]** — Gestiune echipamente ciclism și fitness:
+51 **[Denis]** — Gestiune echipamente ciclism și fitness:
   * Clasa `Bicicletă` (Moștenește `EchipamentSportiv`)
   * Clasa `BandăAlergare` (Moștenește `EchipamentSportiv`)
 
-* **[Stefan]** — Gestiune echipamente jocuri de curte:
+52 **[Stefan]** — Gestiune echipamente jocuri de curte:
   * Clasa `Minge` (Moștenește `EchipamentSportiv`)
   * Clasa `Rachetă` (Moștenește `EchipamentSportiv`)
 
-* **[Ilya]** — Gestiune echipamente tenis de masă / badminton:
+53 **[Ilya]** — Gestiune echipamente tenis de masă / badminton:
   * Clasa `Paletă` (Moștenește `EchipamentSportiv`)
   * Clasa `Fileu` (Moștenește `EchipamentSportiv`)
 
-* **[Seryoja]** — Gestiune echipamente pe roți și gheață:
+54 **[Sereja]** — Gestiune echipamente pe roți și gheață:
   * Clasa `Role` (Moștenește `EchipamentSportiv`)
   * Clasa `PatineGheață` (Moștenește `EchipamentSportiv`)
 
-* **[Borcea Ionut]** — Gestiune echipamente pentru sporturi de iarnă:
+55 **[Borcea Ionut]** — Gestiune echipamente pentru sporturi de iarnă:
   * Clasa `Snowboard` (Moștenește `EchipamentSportiv`)
   * Clasa `Schi` (Moștenește `EchipamentSportiv`)
 
