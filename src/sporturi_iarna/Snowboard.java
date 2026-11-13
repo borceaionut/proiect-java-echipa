@@ -1,3 +1,6 @@
+package sporturi_iarna;
+
+import model.EchipamentSportiv;
 import java.math.BigDecimal;
 
 public class Snowboard extends EchipamentSportiv {
