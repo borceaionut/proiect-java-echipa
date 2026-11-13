@@ -1,48 +1,49 @@
-# Proiect Java - Gestiune Echipamente Sportive
+# Java Project - Sports Equipment Management
 
-Proiect realizat în cadrul facultății pentru disciplina **Programare Orientată pe Obiecte**. Aplicația simulează un sistem de gestiune pentru un magazin sau inventar de articole sportive, utilizând conceptele fundamentale de moștenire, încapsulare și polimorfism.
-
----
-
-## 👥 Echipa și Gestiunea Claselor (Moștenire)
-
-Toate clasele specifice de mai jos moștenesc atributele și metodele comune din clasa părinte (Superclasa) **`EchipamentSportiv`**.
-
-51 **[Denis]** — Gestiune echipamente ciclism și fitness:
-  * Clasa `Bicicletă` (Moștenește `EchipamentSportiv`)
-  * Clasa `BandăAlergare` (Moștenește `EchipamentSportiv`)
-
-52 **[Stefan]** — Gestiune echipamente jocuri de curte:
-  * Clasa `Minge` (Moștenește `EchipamentSportiv`)
-  * Clasa `Rachetă` (Moștenește `EchipamentSportiv`)
-
-53 **[Ilya]** — Gestiune echipamente tenis de masă / badminton:
-  * Clasa `Paletă` (Moștenește `EchipamentSportiv`)
-  * Clasa `Fileu` (Moștenește `EchipamentSportiv`)
-
-54 **[Sereja]** — Gestiune echipamente pe roți și gheață:
-  * Clasa `Role` (Moștenește `EchipamentSportiv`)
-  * Clasa `PatineGheață` (Moștenește `EchipamentSportiv`)
-
-55 **[Borcea Ionut]** — Gestiune echipamente pentru sporturi de iarnă:
-  * Clasa `Snowboard` (Moștenește `EchipamentSportiv`)
-  * Clasa `Schi` (Moștenește `EchipamentSportiv`)
+This project was developed for the **Object-Oriented Programming** university course. The application simulates a management system for a sports goods store or inventory, utilizing fundamental OOP concepts such as inheritance, encapsulation, and polymorphism.
 
 ---
 
-## 🛠️ Tehnologii și Instrumente Utilizate
+## 👥 Team and Class Management (Inheritance)
 
-* **Limbaj de programare:** Java
-* **Sistem de versiuni:** Git & GitHub Cloud
-* **Medii de dezvoltare:** IntelliJ IDEA / Eclipse / VS Code (în funcție de preferințele fiecărui membru)
+All specific classes listed below inherit common attributes and methods from the parent class (Superclass) **`EchipamentSportiv`**.
+
+51. **[Denis]** — Cycling and fitness equipment management:
+  * Class `Bicicletă` (Inherits `EchipamentSportiv`)
+  * Class `BandăAlergare` (Inherits `EchipamentSportiv`)
+
+52. **[Stefan]** — Court games equipment management:
+  * Class `Minge` (Inherits `EchipamentSportiv`)
+  * Class `Rachetă` (Inherits `EchipamentSportiv`)
+
+53. **[Ilya]** — Table tennis / badminton equipment management:
+  * Class `Paletă` (Inherits `EchipamentSportiv`)
+  * Class `Fileu` (Inherits `EchipamentSportiv`)
+
+54. **[Sereja]** — Roller and ice sports equipment management:
+  * Class `Role` (Inherits `EchipamentSportiv`)
+  * Class `PatineGheață` (Inherits `EchipamentSportiv`)
+
+55. **[Borcea Ionut]** — Winter sports equipment management:
+  * Class `Snowboard` (Inherits `EchipamentSportiv`)
+  * Class `Schi` (Inherits `EchipamentSportiv`)
 
 ---
 
-## 💻 Cum se rulează proiectul local
+## 🛠️ Technologies and Tools Used
 
-1. Clonează repository-ul:
+* **Programming Language:** Java
+* **Version Control:** Git & GitHub Cloud
+* **Development Environments:** IntelliJ IDEA / Eclipse / VS Code (depending on each member's preference)
+
+---
+
+## 💻 How to Run the Project Locally
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/borceaionut/proiect-java-echipa.git
    ```
-2. Deschide folderul în mediul tău de dezvoltare (IDE).
-3. Rulează clasa principală care conține metoda `public static void main`.
+2. Open the project folder in your development environment (IDE).
+3. Run the main class containing the `public static void main` method.
+

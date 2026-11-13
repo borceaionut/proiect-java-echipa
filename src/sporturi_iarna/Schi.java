@@ -1,3 +1,6 @@
+package sporturi_iarna;
+
+import model.EchipamentSportiv;
 import java.math.BigDecimal;
 
 public class Schi extends EchipamentSportiv {
