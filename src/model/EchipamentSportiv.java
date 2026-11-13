@@ -1,4 +1,7 @@
+package model;
+
 import java.math.BigDecimal;
+
 
 public class EchipamentSportiv implements EquipmentInstructions {
     private String name;
