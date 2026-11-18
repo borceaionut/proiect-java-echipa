@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class Role extends EchipamentSportiv {
 
-    private double bootSizeEu;
+    private double bootSize;
     private int wheelsPerSkate;
     private double wheelDiameterMm;
     private String bearingRating;
@@ -16,9 +16,9 @@ public class Role extends EchipamentSportiv {
         super();
     }
 
-    public Role(String name, String brand, BigDecimal price, double weightKg, int minimumUserAge, double bootSizeEu, int wheelsPerSkate, double wheelDiameterMm, String bearingRating, boolean hasHeelBrake) {
+    public Role(String name, String brand, BigDecimal price, double weightKg, int minimumUserAge, double bootSize, int wheelsPerSkate, double wheelDiameterMm, String bearingRating, boolean hasHeelBrake) {
         super(name, brand, price, weightKg, minimumUserAge);
-        this.bootSizeEu = bootSizeEu;
+        this.bootSize = bootSize;
         this.wheelsPerSkate = wheelsPerSkate;
         this.wheelDiameterMm = wheelDiameterMm;
         this.bearingRating = bearingRating;
@@ -27,19 +27,19 @@ public class Role extends EchipamentSportiv {
 
     public Role(Role other) {
         super(other);
-        bootSizeEu = other.bootSizeEu;
+        bootSize = other.bootSize;
         wheelsPerSkate = other.wheelsPerSkate;
         wheelDiameterMm = other.wheelDiameterMm;
         bearingRating = other.bearingRating;
         hasHeelBrake = other.hasHeelBrake;
     }
 
-    public double getBootSizeEu() {
-        return bootSizeEu;
+    public double getBootSize() {
+        return bootSize;
     }
 
-    public void setBootSizeEu(double bootSizeEu) {
-        this.bootSizeEu = bootSizeEu;
+    public void setBootSize(double bootSize) {
+        this.bootSize = bootSize;
     }
 
     public int getWheelsPerSkate() {
@@ -87,7 +87,7 @@ public class Role extends EchipamentSportiv {
     @Override
     public String toString() {
         return super.toString() + "\nRole{" +
-                "bootSizeEu=" + bootSizeEu +
+                "bootSizeEu=" + bootSize +
                 ", wheelsPerSkate=" + wheelsPerSkate +
                 ", wheelDiameterMm=" + wheelDiameterMm +
                 ", bearingRating='" + bearingRating + '\'' +
