@@ -14,6 +14,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        //TASK2
         // EchipamentSportiv
         EchipamentSportiv equipmentNoArgs = new EchipamentSportiv();
         EchipamentSportiv equipmentAllArgs = new EchipamentSportiv(
@@ -48,6 +49,7 @@ public class Test {
         System.out.println(iceSkatesNoArgs);
         System.out.println(iceSkatesAllArgs);
         System.out.println(iceSkatesCopy);
+        //TASK2
 
         // TASK 3
         // Why <Object>?? Polymorphism, no?
