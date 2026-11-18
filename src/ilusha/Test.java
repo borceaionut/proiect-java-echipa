@@ -1,9 +1,18 @@
 package ilusha;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+
 import model.EchipamentSportiv;
 
 public class Test {
+
+    private static void displayCollection(ArrayList<Object> collection) {
+        for (Object object : collection) {
+            System.out.println(object);
+        }
+    }
+
     public static void main(String[] args) {
         // EchipamentSportiv
         EchipamentSportiv equipmentNoArgs = new EchipamentSportiv();
@@ -39,5 +48,29 @@ public class Test {
         System.out.println(iceSkatesNoArgs);
         System.out.println(iceSkatesAllArgs);
         System.out.println(iceSkatesCopy);
+
+        // TASK 3
+        // Why <Object>?? Polymorphism, no?
+        ArrayList<Object> esList = new ArrayList<Object>();
+        ArrayList<Object> roleList = new ArrayList<Object>();
+        ArrayList<Object> patineGheataList = new ArrayList<Object>();
+
+        // Populate the lists
+        for (int i = 0; i < 10; i++) {
+            esList.add(new EchipamentSportiv());
+            roleList.add(new Role());
+            patineGheataList.add(new PatineGheata());
+        }
+
+        // Iterate through
+        System.out.println("EchipamentSportiv collection:");
+        displayCollection(esList);
+
+        System.out.println("\n\nRole collection:");
+        displayCollection(roleList);
+
+        System.out.println("\n\nPatineGheață collection:");
+        displayCollection(patineGheataList);
+
     }
 }
