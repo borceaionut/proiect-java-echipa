@@ -73,6 +73,9 @@ public class Test {
 
         System.out.println("\n\nPatineGheață collection:");
         displayCollection(patineGheataList);
+        // TASK 3
+
+
 
     }
 }
