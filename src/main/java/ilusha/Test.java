@@ -1,7 +1,6 @@
 package ilusha;
 
 import com.google.gson.Gson;
-import ilusha.JSON.*;
 import ilusha.JSON.EquipmentJsonData;
 import model.EchipamentSportiv;
 
@@ -67,52 +66,13 @@ public class Test {
 
         // TASK 3
         // Why <Object>?? Polymorphism, no?
-        ArrayList<EchipamentSportiv> esList = new ArrayList<EchipamentSportiv>();
-        ArrayList<Role> roleList = new ArrayList<Role>();
-        ArrayList<PatineGheata> patineGheataList = new ArrayList<PatineGheata>();
+        ArrayList<EchipamentSportiv> esList = new ArrayList<>();
+        ArrayList<Role> roleList = new ArrayList<>();
+        ArrayList<PatineGheata> patineGheataList = new ArrayList<>();
 
         EquipmentJsonData equipmentData = readEquipmentJsonData();
 
-        // Populate the lists from JSON
-        for (EchipamentSportivJson equipmentJson : equipmentData.getEchipamentSportiv()) {
-            esList.add(new EchipamentSportiv(
-                    equipmentJson.getName(),
-                    equipmentJson.getBrand(),
-                    equipmentJson.getPrice(),
-                    equipmentJson.getWeightKg(),
-                    equipmentJson.getMinimumUserAge()
-            ));
-        }
-
-        for (RoleJson roleJson : equipmentData.getRole()) {
-            roleList.add(new Role(
-                    roleJson.getName(),
-                    roleJson.getBrand(),
-                    roleJson.getPrice(),
-                    roleJson.getWeightKg(),
-                    roleJson.getMinimumUserAge(),
-                    roleJson.getBootSize(),
-                    roleJson.getWheelsPerSkate(),
-                    roleJson.getWheelDiameterMm(),
-                    roleJson.getBearingRating(),
-                    roleJson.isHasHeelBrake()
-            ));
-        }
-
-        for (PatineGheataJson patineGheataJson : equipmentData.getPatineGheata()) {
-            patineGheataList.add(new PatineGheata(
-                    patineGheataJson.getName(),
-                    patineGheataJson.getBrand(),
-                    patineGheataJson.getPrice(),
-                    patineGheataJson.getWeightKg(),
-                    patineGheataJson.getMinimumUserAge(),
-                    patineGheataJson.getBootSizeEu(),
-                    patineGheataJson.getSkateType(),
-                    patineGheataJson.getBladeMaterial(),
-                    patineGheataJson.getBladeLengthCm(),
-                    patineGheataJson.isInsulated()
-            ));
-        }
+        EquipmentJsonData.populateFromJson(equipmentData, esList, roleList, patineGheataList);
 
         // Iterate through
         System.out.println("EchipamentSportiv collection:");
@@ -165,9 +125,7 @@ public class Test {
 
                         MyFilter.filterEchipamentSportiv(esList, filterPriceLimit, filterWeightLimit);
                     }
-                    default -> {
-                        System.out.println("Invalid filter option.");
-                    }
+                    default -> System.out.println("Invalid filter option.");
                 }
             }
             case 1 -> {
@@ -177,6 +135,7 @@ public class Test {
 
                 switch (numberOfFilters) {
                     case 1 -> {
+                        // Make it for ranges
                         System.out.println("Enter a boot size -> ");
                         double bootSize = sc.nextDouble();
                         MyFilter.filterRole(roleList, bootSize, null);
@@ -194,9 +153,7 @@ public class Test {
                         int wheelsPerSkate = sc.nextInt();
                         MyFilter.filterRole(roleList, bootSize, wheelsPerSkate);
                     }
-                    default -> {
-                        System.out.println("Invalid filter option.");
-                    }
+                    default -> System.out.println("Invalid filter option.");
                 }
             }
             case 2 -> {
@@ -209,9 +166,7 @@ public class Test {
 
                 MyFilter.filterPatineGheata(patineGheataList, patineFilterInsulated, patineFilterSkateType);
             }
-            default -> {
-                System.out.println("Invalid equipment option.");
-            }
+            default -> System.out.println("Invalid equipment option.");
         }
     }
 
