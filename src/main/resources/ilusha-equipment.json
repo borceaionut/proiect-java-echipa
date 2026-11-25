@@ -1,0 +1,318 @@
+{
+  "echipamentSportiv": [
+    {
+      "name": "Helmet",
+      "brand": "SafeRide",
+      "price": 129.99,
+      "weightKg": 0.6,
+      "minimumUserAge": 12
+    },
+    {
+      "name": "Protective Pads",
+      "brand": "GuardPro",
+      "price": 89.5,
+      "weightKg": 0.8,
+      "minimumUserAge": 8
+    },
+    {
+      "name": "Training Cone Set",
+      "brand": "AgilityMax",
+      "price": 44.9,
+      "weightKg": 1.1,
+      "minimumUserAge": 6
+    },
+    {
+      "name": "Sports Bag",
+      "brand": "MoveFit",
+      "price": 159.0,
+      "weightKg": 1.4,
+      "minimumUserAge": 10
+    },
+    {
+      "name": "Jump Rope",
+      "brand": "CardioLine",
+      "price": 39.99,
+      "weightKg": 0.25,
+      "minimumUserAge": 7
+    },
+    {
+      "name": "Resistance Band Set",
+      "brand": "FlexCore",
+      "price": 74.99,
+      "weightKg": 0.55,
+      "minimumUserAge": 14
+    },
+    {
+      "name": "Yoga Mat",
+      "brand": "BalanceWay",
+      "price": 119.9,
+      "weightKg": 1.2,
+      "minimumUserAge": 10
+    },
+    {
+      "name": "Water Bottle",
+      "brand": "HydroSport",
+      "price": 34.5,
+      "weightKg": 0.35,
+      "minimumUserAge": 5
+    },
+    {
+      "name": "Stopwatch",
+      "brand": "TimeRun",
+      "price": 69.99,
+      "weightKg": 0.12,
+      "minimumUserAge": 10
+    },
+    {
+      "name": "Training Ladder",
+      "brand": "SpeedStep",
+      "price": 98.75,
+      "weightKg": 1.0,
+      "minimumUserAge": 8
+    }
+  ],
+  "role": [
+    {
+      "name": "Inline Skates",
+      "brand": "RollerPro",
+      "price": 499.99,
+      "weightKg": 3.2,
+      "minimumUserAge": 8,
+      "bootSize": 42.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 80.0,
+      "bearingRating": "ABEC-7",
+      "hasHeelBrake": true
+    },
+    {
+      "name": "Junior Inline Skates",
+      "brand": "RollerPro",
+      "price": 289.99,
+      "weightKg": 2.4,
+      "minimumUserAge": 6,
+      "bootSize": 34.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 70.0,
+      "bearingRating": "ABEC-5",
+      "hasHeelBrake": true
+    },
+    {
+      "name": "Speed Skates",
+      "brand": "Velocity",
+      "price": 749.0,
+      "weightKg": 2.8,
+      "minimumUserAge": 14,
+      "bootSize": 43.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 100.0,
+      "bearingRating": "ABEC-9",
+      "hasHeelBrake": false
+    },
+    {
+      "name": "Fitness Skates",
+      "brand": "MoveFit",
+      "price": 399.5,
+      "weightKg": 3.0,
+      "minimumUserAge": 12,
+      "bootSize": 40.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 84.0,
+      "bearingRating": "ABEC-7",
+      "hasHeelBrake": true
+    },
+    {
+      "name": "Urban Skates",
+      "brand": "StreetGlide",
+      "price": 529.9,
+      "weightKg": 3.4,
+      "minimumUserAge": 13,
+      "bootSize": 41.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 90.0,
+      "bearingRating": "ABEC-7",
+      "hasHeelBrake": false
+    },
+    {
+      "name": "Aggressive Skates",
+      "brand": "RampX",
+      "price": 619.99,
+      "weightKg": 3.9,
+      "minimumUserAge": 15,
+      "bootSize": 44.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 60.0,
+      "bearingRating": "ABEC-5",
+      "hasHeelBrake": false
+    },
+    {
+      "name": "Adjustable Skates",
+      "brand": "GrowRide",
+      "price": 259.9,
+      "weightKg": 2.2,
+      "minimumUserAge": 5,
+      "bootSize": 32.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 64.0,
+      "bearingRating": "ABEC-3",
+      "hasHeelBrake": true
+    },
+    {
+      "name": "Recreational Skates",
+      "brand": "EasyRoll",
+      "price": 349.0,
+      "weightKg": 2.9,
+      "minimumUserAge": 10,
+      "bootSize": 39.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 76.0,
+      "bearingRating": "ABEC-5",
+      "hasHeelBrake": true
+    },
+    {
+      "name": "Marathon Skates",
+      "brand": "EnduroWheel",
+      "price": 899.99,
+      "weightKg": 3.1,
+      "minimumUserAge": 16,
+      "bootSize": 45.0,
+      "wheelsPerSkate": 3,
+      "wheelDiameterMm": 110.0,
+      "bearingRating": "ABEC-9",
+      "hasHeelBrake": false
+    },
+    {
+      "name": "Classic Quad Skates",
+      "brand": "RetroRoll",
+      "price": 319.99,
+      "weightKg": 3.3,
+      "minimumUserAge": 9,
+      "bootSize": 38.0,
+      "wheelsPerSkate": 4,
+      "wheelDiameterMm": 58.0,
+      "bearingRating": "ABEC-5",
+      "hasHeelBrake": true
+    }
+  ],
+  "patineGheata": [
+    {
+      "name": "Ice Skates",
+      "brand": "IcePro",
+      "price": 359.5,
+      "weightKg": 2.1,
+      "minimumUserAge": 10,
+      "bootSizeEu": 39.0,
+      "skateType": "Hockey",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 28.0,
+      "insulated": true
+    },
+    {
+      "name": "Figure Skates",
+      "brand": "GraceIce",
+      "price": 429.99,
+      "weightKg": 1.9,
+      "minimumUserAge": 8,
+      "bootSizeEu": 37.0,
+      "skateType": "Figure",
+      "bladeMaterial": "Carbon steel",
+      "bladeLengthCm": 26.0,
+      "insulated": true
+    },
+    {
+      "name": "Junior Hockey Skates",
+      "brand": "IcePro",
+      "price": 249.9,
+      "weightKg": 1.6,
+      "minimumUserAge": 6,
+      "bootSizeEu": 33.0,
+      "skateType": "Hockey",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 23.0,
+      "insulated": true
+    },
+    {
+      "name": "Speed Ice Skates",
+      "brand": "FrostVelocity",
+      "price": 799.0,
+      "weightKg": 1.8,
+      "minimumUserAge": 15,
+      "bootSizeEu": 42.0,
+      "skateType": "Speed",
+      "bladeMaterial": "High-carbon steel",
+      "bladeLengthCm": 36.0,
+      "insulated": false
+    },
+    {
+      "name": "Recreational Ice Skates",
+      "brand": "EasyIce",
+      "price": 199.99,
+      "weightKg": 2.0,
+      "minimumUserAge": 9,
+      "bootSizeEu": 40.0,
+      "skateType": "Recreational",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 29.0,
+      "insulated": true
+    },
+    {
+      "name": "Outdoor Lake Skates",
+      "brand": "NorthGlide",
+      "price": 389.5,
+      "weightKg": 2.3,
+      "minimumUserAge": 12,
+      "bootSizeEu": 41.0,
+      "skateType": "Touring",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 34.0,
+      "insulated": true
+    },
+    {
+      "name": "Training Ice Skates",
+      "brand": "LearnIce",
+      "price": 179.99,
+      "weightKg": 1.7,
+      "minimumUserAge": 5,
+      "bootSizeEu": 31.0,
+      "skateType": "Training",
+      "bladeMaterial": "Carbon steel",
+      "bladeLengthCm": 21.0,
+      "insulated": true
+    },
+    {
+      "name": "Professional Figure Skates",
+      "brand": "GraceIce",
+      "price": 999.99,
+      "weightKg": 1.75,
+      "minimumUserAge": 16,
+      "bootSizeEu": 38.0,
+      "skateType": "Figure",
+      "bladeMaterial": "High-carbon steel",
+      "bladeLengthCm": 27.0,
+      "insulated": false
+    },
+    {
+      "name": "Goalie Skates",
+      "brand": "PuckWall",
+      "price": 649.99,
+      "weightKg": 2.5,
+      "minimumUserAge": 14,
+      "bootSizeEu": 44.0,
+      "skateType": "Hockey Goalie",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 30.0,
+      "insulated": true
+    },
+    {
+      "name": "Rental Ice Skates",
+      "brand": "ArenaUse",
+      "price": 149.99,
+      "weightKg": 2.2,
+      "minimumUserAge": 7,
+      "bootSizeEu": 36.0,
+      "skateType": "Recreational",
+      "bladeMaterial": "Stainless steel",
+      "bladeLengthCm": 25.0,
+      "insulated": false
+    }
+  ]
+}
