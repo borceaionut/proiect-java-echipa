@@ -14,7 +14,7 @@ public class MyFilter {
         String input = sc.nextLine().trim();
 
         if (input.isBlank()) {
-            return DEFAULT_LIMIT_RANGE;
+            return null;
         }
 
         String[] intervals = input.split("-");
@@ -58,9 +58,10 @@ public class MyFilter {
     }
 
     // Filter Role
-    static void filterRole(ArrayList<Role> roleList, Double bootSize, Integer wheelsPerSkate) {
+    static void filterRole(ArrayList<Role> roleList, Double[] bootSizeLimit, Integer wheelsPerSkate) {
         for (Role role : roleList) {
-            boolean bootSizeMatches = bootSize == null || Double.compare(role.getBootSize(), bootSize) == 0;
+            boolean bootSizeMatches = role.getBootSize() >= bootSizeLimit[0]
+                    && role.getBootSize() <= bootSizeLimit[1];
 
             boolean wheelsPerSkateMatches = wheelsPerSkate == null || role.getWheelsPerSkate() == wheelsPerSkate;
 

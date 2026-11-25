@@ -89,8 +89,9 @@ public class Test {
 
         String typeOfFilterText = "What do u want to filter?\n0 -> Echipament Sportiv\t1 -> Role\t2 -> PatineGheata";
         String numberOfFiltersText = "What do u want to filter?\n1 -> price\t2 -> weight in kg\t 3 -> both\n\n";
+        // Trebu de scos
         String skipText = " (Press enter to skip) -> ";
-
+        //
         String priceESFilterText = "Enter a price range" + skipText + "[Example: 0-130] ";
 
         Scanner sc = new Scanner(System.in);
@@ -135,10 +136,9 @@ public class Test {
 
                 switch (numberOfFilters) {
                     case 1 -> {
-                        // Make it for ranges
-                        System.out.println("Enter a boot size -> ");
-                        double bootSize = sc.nextDouble();
-                        MyFilter.filterRole(roleList, bootSize, null);
+                        System.out.println("Enter a boot size range-> ");
+                        Double[] bootSizeRange = readRange(sc);
+                        MyFilter.filterRole(roleList, bootSizeRange, null);
                     }
                     case 2 -> {
                         System.out.println("Enter number of wheels -> ");
@@ -146,12 +146,13 @@ public class Test {
                         MyFilter.filterRole(roleList, null, wheelsPerSkate);
                     }
                     case 3 -> {
-                        System.out.println("Enter a boot size -> ");
-                        double bootSize = sc.nextDouble();
+                        System.out.println("Enter a boot size range-> ");
+                        Double[] bootSizeRange = readRange(sc);
+                        MyFilter.filterRole(roleList, bootSizeRange, null);
 
                         System.out.println("Enter number of wheels -> ");
                         int wheelsPerSkate = sc.nextInt();
-                        MyFilter.filterRole(roleList, bootSize, wheelsPerSkate);
+                        MyFilter.filterRole(roleList, bootSizeRange, wheelsPerSkate);
                     }
                     default -> System.out.println("Invalid filter option.");
                 }
