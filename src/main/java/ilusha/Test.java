@@ -1,19 +1,33 @@
 package ilusha;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-
+import com.google.gson.Gson;
+import ilusha.JSON.*;
+import ilusha.JSON.EquipmentJsonData;
 import model.EchipamentSportiv;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import static ilusha.MyFilter.DEFAULT_LIMIT_RANGE;
+import static ilusha.MyFilter.readRange;
 
 public class Test {
 
-    private static void displayCollection(ArrayList<Object> collection) {
-        for (Object object : collection) {
+    private static final String EQUIPMENT_JSON_FILE = "/ilusha-equipment.json";
+
+    private static void displayCollection(ArrayList<? extends EchipamentSportiv> collection) {
+        for (EchipamentSportiv object : collection) {
             System.out.println(object);
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //TASK2
         // EchipamentSportiv
         EchipamentSportiv equipmentNoArgs = new EchipamentSportiv();
@@ -53,15 +67,51 @@ public class Test {
 
         // TASK 3
         // Why <Object>?? Polymorphism, no?
-        ArrayList<Object> esList = new ArrayList<Object>();
-        ArrayList<Object> roleList = new ArrayList<Object>();
-        ArrayList<Object> patineGheataList = new ArrayList<Object>();
+        ArrayList<EchipamentSportiv> esList = new ArrayList<EchipamentSportiv>();
+        ArrayList<Role> roleList = new ArrayList<Role>();
+        ArrayList<PatineGheata> patineGheataList = new ArrayList<PatineGheata>();
 
-        // Populate the lists
-        for (int i = 0; i < 10; i++) {
-            esList.add(new EchipamentSportiv());
-            roleList.add(new Role());
-            patineGheataList.add(new PatineGheata());
+        EquipmentJsonData equipmentData = readEquipmentJsonData();
+
+        // Populate the lists from JSON
+        for (EchipamentSportivJson equipmentJson : equipmentData.getEchipamentSportiv()) {
+            esList.add(new EchipamentSportiv(
+                    equipmentJson.getName(),
+                    equipmentJson.getBrand(),
+                    equipmentJson.getPrice(),
+                    equipmentJson.getWeightKg(),
+                    equipmentJson.getMinimumUserAge()
+            ));
+        }
+
+        for (RoleJson roleJson : equipmentData.getRole()) {
+            roleList.add(new Role(
+                    roleJson.getName(),
+                    roleJson.getBrand(),
+                    roleJson.getPrice(),
+                    roleJson.getWeightKg(),
+                    roleJson.getMinimumUserAge(),
+                    roleJson.getBootSize(),
+                    roleJson.getWheelsPerSkate(),
+                    roleJson.getWheelDiameterMm(),
+                    roleJson.getBearingRating(),
+                    roleJson.isHasHeelBrake()
+            ));
+        }
+
+        for (PatineGheataJson patineGheataJson : equipmentData.getPatineGheata()) {
+            patineGheataList.add(new PatineGheata(
+                    patineGheataJson.getName(),
+                    patineGheataJson.getBrand(),
+                    patineGheataJson.getPrice(),
+                    patineGheataJson.getWeightKg(),
+                    patineGheataJson.getMinimumUserAge(),
+                    patineGheataJson.getBootSizeEu(),
+                    patineGheataJson.getSkateType(),
+                    patineGheataJson.getBladeMaterial(),
+                    patineGheataJson.getBladeLengthCm(),
+                    patineGheataJson.isInsulated()
+            ));
         }
 
         // Iterate through
@@ -75,7 +125,106 @@ public class Test {
         displayCollection(patineGheataList);
         // TASK 3
 
+        //TASK 4
 
+        String typeOfFilterText = "What do u want to filter?\n0 -> Echipament Sportiv\t1 -> Role\t2 -> PatineGheata";
+        String numberOfFiltersText = "What do u want to filter?\n1 -> price\t2 -> weight in kg\t 3 -> both\n\n";
+        String skipText = " (Press enter to skip) -> ";
 
+        String priceESFilterText = "Enter a price range" + skipText + "[Example: 0-130] ";
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(typeOfFilterText);
+        int typeOfFilter = sc.nextInt();
+        sc.nextLine();
+
+        switch (typeOfFilter) {
+            case 0 -> {
+                System.out.println(numberOfFiltersText);
+                int numberOfFilters = sc.nextInt();
+                sc.nextLine();
+
+                switch (numberOfFilters) {
+                    case 1 -> {
+                        System.out.println(priceESFilterText);
+                        Double[] filterPriceLimit = readRange(sc);
+                        MyFilter.filterEchipamentSportiv(esList, filterPriceLimit, DEFAULT_LIMIT_RANGE);
+                    }
+                    case 2 -> {
+                        System.out.println("Enter weight range in kg" + skipText + "[Example: 2-3]");
+                        Double[] filterWeightLimit = readRange(sc);
+                        MyFilter.filterEchipamentSportiv(esList, DEFAULT_LIMIT_RANGE, filterWeightLimit);
+                    }
+                    case 3 -> {
+                        System.out.println(priceESFilterText);
+                        Double[] filterPriceLimit = readRange(sc);
+
+                        System.out.println("Enter weight range in kg" + skipText + "[Example: 2-3]");
+                        Double[] filterWeightLimit = readRange(sc);
+
+                        MyFilter.filterEchipamentSportiv(esList, filterPriceLimit, filterWeightLimit);
+                    }
+                    default -> {
+                        System.out.println("Invalid filter option.");
+                    }
+                }
+            }
+            case 1 -> {
+                System.out.println("What do u want to filter?\n1 -> boot size\t2 -> number of wheels\t 3 -> both\n\n");
+                int numberOfFilters = sc.nextInt();
+                sc.nextLine();
+
+                switch (numberOfFilters) {
+                    case 1 -> {
+                        System.out.println("Enter a boot size -> ");
+                        double bootSize = sc.nextDouble();
+                        MyFilter.filterRole(roleList, bootSize, null);
+                    }
+                    case 2 -> {
+                        System.out.println("Enter number of wheels -> ");
+                        int wheelsPerSkate = sc.nextInt();
+                        MyFilter.filterRole(roleList, null, wheelsPerSkate);
+                    }
+                    case 3 -> {
+                        System.out.println("Enter a boot size -> ");
+                        double bootSize = sc.nextDouble();
+
+                        System.out.println("Enter number of wheels -> ");
+                        int wheelsPerSkate = sc.nextInt();
+                        MyFilter.filterRole(roleList, bootSize, wheelsPerSkate);
+                    }
+                    default -> {
+                        System.out.println("Invalid filter option.");
+                    }
+                }
+            }
+            case 2 -> {
+                System.out.println("Insulated? (true/false)" + skipText);
+                String input = sc.nextLine();
+                Boolean patineFilterInsulated = input.isBlank() ? null : Boolean.parseBoolean(input);
+
+                System.out.println("Enter skate type" + skipText + "[Example: Hockey]");
+                String patineFilterSkateType = sc.nextLine();
+
+                MyFilter.filterPatineGheata(patineGheataList, patineFilterInsulated, patineFilterSkateType);
+            }
+            default -> {
+                System.out.println("Invalid equipment option.");
+            }
+        }
     }
+
+    private static EquipmentJsonData readEquipmentJsonData() throws IOException {
+        InputStream inputStream = Test.class.getResourceAsStream(EQUIPMENT_JSON_FILE);
+
+        if (inputStream == null) {
+            throw new IllegalStateException("Could not find " + EQUIPMENT_JSON_FILE);
+        }
+
+        try (Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+            return new Gson().fromJson(reader, EquipmentJsonData.class);
+        }
+    }
+    //TASK 4
 }
