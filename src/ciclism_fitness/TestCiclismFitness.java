@@ -1,13 +1,14 @@
 
 package ciclism_fitness;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import model.EchipamentSportiv;
 import java.math.BigDecimal;
 
 public class TestCiclismFitness {
     public static void main(String[] args) {
 
-        // === EchipamentSportiv ===
+        //EchipamentSportiv
 
         // Constructor fara argumente
         EchipamentSportiv e1 = new EchipamentSportiv();
@@ -32,6 +33,7 @@ public class TestCiclismFitness {
                 new BigDecimal("2500"), 14.5, 12
         );
 
+
         Bicicleta b3 = new Bicicleta(b2);
 
 
@@ -45,7 +47,10 @@ public class TestCiclismFitness {
                 new BigDecimal("7500"), 80.0, 16
         );
 
+
         BandaAlergare t3 = new BandaAlergare(t2);
+
+        // Ex practic
 
 
         // === Afisare obiecte ===
@@ -64,5 +69,6 @@ public class TestCiclismFitness {
         System.out.println(t1);
         System.out.println(t2);
         System.out.println(t3);
+
     }
 }
