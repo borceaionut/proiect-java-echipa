@@ -1,8 +1,6 @@
 # Compiled class file
 *.class
 
-.idea/
-
 # Log file
 *.log
 
@@ -29,3 +27,4 @@ replay_pid*
 .idea/
 out/
 *.iml
+.ai/
